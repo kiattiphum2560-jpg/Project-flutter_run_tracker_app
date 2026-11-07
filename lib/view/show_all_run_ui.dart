@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'add_run_ui.dart';
- 
+
 class ShowAllRunUi extends StatefulWidget {
   const ShowAllRunUi({super.key});
- 
+
   @override
   State<ShowAllRunUi> createState() => _ShowAllRunUiState();
 }
- 
+
 class _ShowAllRunUiState extends State<ShowAllRunUi> {
   @override
   Widget build(BuildContext context) {
@@ -37,8 +37,7 @@ class _ShowAllRunUiState extends State<ShowAllRunUi> {
           mainAxisSize: MainAxisSize.min,
           children: [
             const SizedBox(height: 44),
-            Image.asset(
-              'assets/images/speed.png',
+            Image.asset('assets/icon/speed.png',
               width: MediaQuery.of(context).size.width * 0.355,
               height: MediaQuery.of(context).size.width * 0.355,
             ),
@@ -57,4 +56,3 @@ class _ShowAllRunUiState extends State<ShowAllRunUi> {
     );
   }
 }
- 

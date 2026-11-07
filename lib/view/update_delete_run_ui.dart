@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
- 
+
 class UpdateDeleteRunUi extends StatefulWidget {
   const UpdateDeleteRunUi({super.key});
- 
+
   @override
   State<UpdateDeleteRunUi> createState() => _UpdateDeleteRunUiState();
 }
- 
+
 class _UpdateDeleteRunUiState extends State<UpdateDeleteRunUi> {
   @override
   Widget build(BuildContext context) {
@@ -98,30 +98,30 @@ class _UpdateDeleteRunUiState extends State<UpdateDeleteRunUi> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('ยังไม่ได้เชื่อมต่อการแก้ไขข้อมูล'),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
                       foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4),
-                      ),
                     ),
-                    child: Text('บันทึกข้อมูล'),
+                    child: const Text('บันทึกการแก้ไข'),
                   ),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => Navigator.pop(context),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
                       foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4),
-                      ),
                     ),
-                    child: Text('ยกเลิก'),
+                    child: const Text('ยกเลิก'),
                   ),
                 ),
               ],
@@ -132,4 +132,3 @@ class _UpdateDeleteRunUiState extends State<UpdateDeleteRunUi> {
     );
   }
 }
- 

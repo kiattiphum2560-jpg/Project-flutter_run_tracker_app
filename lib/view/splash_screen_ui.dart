@@ -38,42 +38,47 @@ class _SplashScreenUIState extends State<SplashScreenUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: _backgroundColor,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const SizedBox(height: 60),
-            Image.asset(
-              'assets/icon/speed.png',
-              width: 150,
-              height: 150,
-              fit: BoxFit.contain,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SizedBox(height: 160),
+                Image.asset(
+                  'assets/icon/speed.png',
+                  width: 200,
+                  height: 200,
+                  fit: BoxFit.contain,
+                ),
+                const SizedBox(height: 16),
+                const Text(
+                  'RUN TRACKER',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 32),
+                const CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                ),
+                const SizedBox(height: 160),
+                const Text(
+                  '© 2026 RUN TRACKER',
+                  style: TextStyle(color: Color.fromARGB(234, 73, 73, 73)),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  'Created by NinnN SAU TEAM',
+                  style: TextStyle(color: Color.fromARGB(234, 73, 73, 73)),
+                ),
+                const SizedBox(height: 24),
+              ],
             ),
-            const SizedBox(height: 16),
-            const Text(
-              'RUN TRACKER',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 14,
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 50),
-            const CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-            ),
-            const SizedBox(height: 60),
-            const Text(
-              '© 2026 RUN TRACKER',
-              style: TextStyle(color: Colors.white),
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Created by NinnN SAU TEAM',
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
+          ),
         ),
       ),
     );
